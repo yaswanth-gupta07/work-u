@@ -1,0 +1,175 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styles */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f2ef;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #004182;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .hero h2 {
+    font-size: 28px;
+    color: #004182;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* Filter Container */
+  .filter-container {
+    margin-top: 20px;
+  }
+  
+  .filter-dropdown {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+  }
+  
+  /* Offers Container */
+  .offers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Offer Box */
+  .offer-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .offer-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .offer-header h3 {
+    font-size: 20px;
+    color: #004182;
+    margin-bottom: 10px;
+  }
+  
+  .offer-detail {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  /* Apply Button */
+  .apply-btn {
+    display: inline-block;
+    background-color: #004182;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: right;
+  }
+  
+  .apply-btn:hover {
+    background-color: #003366;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #004182;
+    color: white;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  .home-button {
+    background-color: #4CAF50; /* Green background for both buttons */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px; /* Space between the buttons */
+  }
+  
+  .home-button:hover, .back-to-services:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Align content to edges */
+    align-items: center; /* Vertically center content */
+    background-color: #003366; /* Dark blue background */
+    padding: 20px 50px;
+    color: #fff;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between elements */
+}
+
+.navbar-left h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.home-button {
+    background-color: #4CAF50; /* Green background */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+/* Hover effect for Home button */
+.home-button:hover {
+    background-color: #45a049;
+}

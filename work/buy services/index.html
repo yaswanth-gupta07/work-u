@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Showcase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+      <h1>Service Showcase</h1>
+      <a href="../home page/Untitled-1.html" class="home-button" id="home-button">Home</a> <!-- Home button added -->
+  </header>
+
+  <!-- Add Toggle Buttons for Student and Professional -->
+  <div class="toggle-container">
+    <button id="student" class="toggle-button active">Student</button>
+    <button id="professional" class="toggle-button">Professional</button>
+  </div>
+  <div id="role-content">
+    <p>You selected: <span id="selected-role">Student</span></p>
+  </div>
+
+  <main>
+    <div class="content">
+      <!-- Sidebar for Filters -->
+      <aside class="sidebar">
+        <h2>Filters</h2>
+        <div class="filter-group">
+          <h3>Price</h3>
+          <select id="price-filter">
+            <option value="all">All</option>
+            <option value="under-25">Under $25</option>
+            <option value="25-50">$25 - $50</option>
+            <option value="50-80">$50 - $80</option>
+            <option value="above-80">Above $80</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <h3>Category</h3>
+          <select id="category-filter">
+            <option value="all">All Categories</option>
+            <option value="under-25">Under $25</option>
+            <option value="25-50">$25 - $50</option>
+            <option value="50-80">$50 - $80</option>
+            <option value="above-80">Above $80</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <h3>Ratings</h3>
+          <select id="rating-filter">
+            <option value="all">All Ratings</option>
+            <option value="4">4 Stars & Above</option>
+            <option value="4.5">4.5 Stars & Above</option>
+            <option value="5">5 Stars</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <h3>Delivery Time</h3>
+          <select id="delivery-filter">
+            <option value="all">Any Time</option>
+            <option value="1-day">Within 1 Day</option>
+            <option value="2-days">Within 2 Days</option>
+            <option value="3-days">Within 3 Days</option>
+            <option value="1-week">Within 1 Week</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- Main Services Section -->
+      <section class="service-categories">
+        <div class="category">
+          <h2>Under $25</h2>
+          <div class="service-list" id="under-25"></div>
+        </div>
+        <div class="category">
+          <h2>$25 - $50</h2>
+          <div class="service-list" id="25-50"></div>
+        </div>
+        <div class="category">
+          <h2>$50 - $80</h2>
+          <div class="service-list" id="50-80"></div>
+        </div>
+        <div class="category">
+          <h2>Above $80</h2>
+          <div class="service-list" id="above-80"></div>
+        </div>
+      </section>
+    </div>
+    <section class="service-categories">
+      <div class="category">
+        <h2>Under $25</h2>
+        <div class="service-list" id="under-25">
+          <!-- Service cards go here -->
+          <div class="service-card" data-category="student">
+            <div class="content">
+              <h3>Service 1</h3>
+              <p>Description for service 1.</p>
+              <div class="tags">
+                <span class="tag">Student</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-card" data-category="professional">
+            <div class="content">
+              <h3>Service 2</h3>
+              <p>Description for service 2.</p>
+              <div class="tags">
+                <span class="tag">Professional</span>
+              </div>
+            </div>
+          </div>
+          <!-- More service cards here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Service Showcase. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

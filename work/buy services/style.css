@@ -1,0 +1,479 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Toggle Buttons */
+.toggle-container {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.toggle-button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #0073e6;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-button.active {
+  background-color: #0073e6;
+  color: white;
+}
+
+#role-content {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Header */
+header {
+  background-color: #0073e6;
+  color: white;
+  /* padding: 15px; */
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: white;
+  color: #0073e6;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: #005bb5;
+  color: white;
+}
+
+/* Main Content Layout */
+.content {
+  display: flex;
+  max-width: 1200px;
+  margin: 30px auto;
+  gap: 20px;
+  padding: 0 15px;
+}
+
+/* Sidebar Filters */
+.sidebar {
+  flex: 1;
+  max-width: 250px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #0073e6;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group h3 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+}
+
+/* Main Services Section */
+.service-categories {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.category {
+  margin-bottom: 20px;
+}
+
+.category h2 {
+  font-size: 1.5rem;
+  color: #0073e6;
+  margin-bottom: 10px;
+}
+
+/* Horizontal Layout for Service Cards */
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Spacing between cards */
+  justify-content: flex-start;
+}
+
+/* Service Card Styling */
+.service-card {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: calc(33.33% - 20px); /* Three cards per row */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+  width: 100%;
+  height: 150px; /* Maintain the same height */
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.service-card .content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-card h3 {
+  font-size: 1.2rem; /* Slightly larger heading */
+  margin: 10px 0;
+  color: #0073e6;
+  text-transform: capitalize;
+}
+
+.service-card p {
+  font-size: 1rem; /* Increase description size */
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.service-card .details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem; /* Slightly larger details */
+  color: #333;
+}
+
+.service-card .details span.price {
+  font-weight: bold;
+  color: #0073e6;
+}
+
+/* Footer */
+footer {
+  background-color: #0073e6;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .sidebar,
+body.dark-mode .service-card {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border: 1px solid #333;
+}
+
+body.dark-mode footer {
+  background-color: #333;
+}
+.back-button {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+/* Main Content Layout */
+#details-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Service Info Section */
+.service-info {
+  flex: 2;
+  min-width: 60%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#service-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+#service-title {
+  font-size: 2rem;
+  color: #0073e6;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+#service-description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.service-extras {
+  margin-top: 20px;
+}
+
+.service-extras p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Pricing Section */
+.pricing-info {
+  flex: 1;
+  min-width: 35%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-info h3 {
+  font-size: 1.5rem;
+  color: #0073e6;
+  margin-bottom: 20px;
+}
+
+.pricing-info p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.pricing-info .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0073e6;
+  margin-bottom: 20px;
+}
+
+.pay-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #0073e6;
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pay-button:hover {
+  background-color: #005bb5;
+}
+
+/* Footer */
+footer {
+  background-color: #0073e6;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode header {
+  background-color: #333;
+}
+
+body.dark-mode footer {
+  background-color: #333;
+}
+
+body.dark-mode .service-details-container {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .pay-button {
+  background-color: #005bb5;
+}
+
+body.dark-mode .pay-button:hover {
+  background-color: #0073e6;
+}
+
+body.dark-mode .service-info,
+body.dark-mode .pricing-info {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border: 1px solid #333;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-primary {
+  color: #0073e6;
+}
+
+.text-secondary {
+  color: #555;
+}
+/* Toggle Buttons */
+.toggle-container {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.toggle-button {
+  padding: 15px 30px;  /* Increased padding for larger clickable area */
+  margin: 0 15px;  /* Added more margin between buttons */
+  font-size: 18px;  /* Increased font size for readability */
+  cursor: pointer;
+  border: 2px solid #0073e6;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.toggle-button.active {
+  background-color: #0073e6;
+  color: white;
+}
+
+.toggle-button:hover {
+  background-color: #005bb5;  /* Darker blue on hover */
+  color: white;
+  transform: scale(1.05);  /* Slightly enlarges the button on hover */
+}
+
+#role-content {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+.service-card {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: calc(33.33% - 20px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  display: inline-block;
+}
+
+.service-card .tags {
+  margin-top: 15px;
+}
+
+.service-card .tag {
+  background-color: #0073e6;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Add space between service cards */
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.home-button, .back-to-services {
+  background-color: #4CAF50; /* Green background for both buttons */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 10px; /* Space between the buttons */
+}
+
+.home-button:hover, .back-to-services:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

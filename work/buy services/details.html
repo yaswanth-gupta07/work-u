@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="back-button" aria-label="Back to Services" style="color:blue;"">← Back to Services</a>
+  </header>
+  <main id="details-container">
+    <!-- Service Details Section -->
+    <div class="service-details-container">
+      <div class="service-info">
+        <img id="service-image" src="https://via.placeholder.com/500x300" alt="Service Image">
+        <h2 id="service-title"></h2>
+        <p id="service-description"></p>
+        <div class="service-extras">
+          <p><strong>Rating:</strong> <span id="service-rating"></span></p>
+          <p><strong>Reviews:</strong> <span id="service-reviews"></span></p>
+          <p><strong>Expertise:</strong> <span id="service-level"></span></p>
+        </div>
+      </div>
+
+      <div class="pricing-info">
+        <h3>Pricing Details</h3>
+        <p><strong>Price:</strong> $<span id="service-price"></span></p>
+        <p><strong>Delivery Time:</strong> <span id="service-delivery"></span></p>
+        <p><strong>Revisions:</strong> 3</p>
+        <button class="pay-button" onclick="showPaymentGateway()">Pay Now</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>© 2025 Service Showcase. All Rights Reserved.</p>
+  </footer>
+  <script src="details.js"></script>
+</body>
+</html>

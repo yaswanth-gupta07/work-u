@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offers by Alumnus</title>
+  <link rel="stylesheet" href="off.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1 class="brand">AlumniConnect</h1>
+      <a href="../home page/Untitled-1.html" class="home-button" id="home-button">Home</a> <!-- Home button added -->
+
+    </div>
+  </header>
+  
+  <main>
+    <section class="hero">
+      <h2>Explore Opportunities by Alumnus</h2>
+      <p>Discover exclusive job opportunities shared by our esteemed alumni network.</p>
+      <div class="filter-container">
+        <label for="locationFilter">Location:</label>
+        <select id="locationFilter" class="filter-dropdown">
+          <option value="all">All Locations</option>
+        </select>
+
+        <label for="experienceFilter">Experience:</label>
+        <select id="experienceFilter" class="filter-dropdown">
+          <option value="all">All Experiences</option>
+        </select>
+
+        <label for="roleFilter">Role:</label>
+        <select id="roleFilter" class="filter-dropdown">
+          <option value="all">All Roles</option>
+        </select>
+
+        <label for="skillFilter">Skill:</label>
+        <select id="skillFilter" class="filter-dropdown">
+          <option value="all">All Skills</option>
+        </select>
+
+        <label for="modeFilter">Mode:</label>
+        <select id="modeFilter" class="filter-dropdown">
+          <option value="all">All Modes</option>
+        </select>
+      </div>
+    </section>
+    
+    <section class="offers-container">
+      <!-- Offer boxes will be dynamically created -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 AlumniConnect. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const roles = ["Software Engineer", "Data Analyst", "Product Manager", "UI/UX Designer", "Machine Learning Engineer", "Full Stack Developer"];
+    const locations = ["Mumbai", "Bangalore", "Delhi", "Chennai", "Hyderabad", "Kolkata", "Pune"];
+    const modes = ["Remote", "On-Site", "Hybrid"];
+    const skills = ["JavaScript", "Python", "SQL", "React", "Node.js", "AWS", "Machine Learning", "UI/UX Design"];
+    const experiences = ["0-2 years", "2-4 years", "4-6 years", "6+ years"];
+
+    const offersData = [];
+    const container = document.querySelector('.offers-container');
+    const locationFilter = document.getElementById('locationFilter');
+    const experienceFilter = document.getElementById('experienceFilter');
+    const roleFilter = document.getElementById('roleFilter');
+    const skillFilter = document.getElementById('skillFilter');
+    const modeFilter = document.getElementById('modeFilter');
+
+    // Function to get random element from array
+    function getRandomElement(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    // Function to populate filter dropdowns
+    function populateFilterOptions(dataArray, dropdown) {
+      dataArray.forEach(item => {
+        const option = document.createElement('option');
+        option.value = item;
+        option.textContent = item;
+        dropdown.appendChild(option);
+      });
+    }
+
+    // Function to create offer boxes
+    function createOffers() {
+      for (let i = 1; i <= 25; i++) {
+        const offer = {
+          id: i,
+          role: getRandomElement(roles),
+          location: getRandomElement(locations),
+          mode: getRandomElement(modes),
+          skills: getRandomElement(skills),
+          experience: getRandomElement(experiences),
+        };
+        offersData.push(offer);
+
+        const offerBox = document.createElement('div');
+        offerBox.className = 'offer-box';
+        offerBox.dataset.location = offer.location;
+        offerBox.dataset.experience = offer.experience;
+        offerBox.dataset.role = offer.role;
+        offerBox.dataset.skill = offer.skills;
+        offerBox.dataset.mode = offer.mode;
+
+        offerBox.innerHTML = `
+          <div class="offer-header">
+            <h3>Offer #${offer.id}</h3>
+          </div>
+          <div class="offer-detail"><strong>Role:</strong> ${offer.role}</div>
+          <div class="offer-detail"><strong>Location:</strong> ${offer.location}</div>
+          <div class="offer-detail"><strong>Mode:</strong> ${offer.mode}</div>
+          <div class="offer-detail"><strong>Skills Required:</strong> ${offer.skills}</div>
+          <div class="offer-detail"><strong>Experience:</strong> ${offer.experience}</div>
+          <button class="apply-btn">Apply Now</button>
+        `;
+
+        container.appendChild(offerBox);
+      }
+    }
+
+    // Function to filter offers
+    function filterOffers() {
+      const selectedLocation = locationFilter.value;
+      const selectedExperience = experienceFilter.value;
+      const selectedRole = roleFilter.value;
+      const selectedSkill = skillFilter.value;
+      const selectedMode = modeFilter.value;
+
+      const offerBoxes = document.querySelectorAll('.offer-box');
+      offerBoxes.forEach(box => {
+        const matchesLocation = selectedLocation === 'all' || box.dataset.location === selectedLocation;
+        const matchesExperience = selectedExperience === 'all' || box.dataset.experience === selectedExperience;
+        const matchesRole = selectedRole === 'all' || box.dataset.role === selectedRole;
+        const matchesSkill = selectedSkill === 'all' || box.dataset.skill === selectedSkill;
+        const matchesMode = selectedMode === 'all' || box.dataset.mode === selectedMode;
+
+        if (matchesLocation && matchesExperience && matchesRole && matchesSkill && matchesMode) {
+          box.style.display = 'block';
+        } else {
+          box.style.display = 'none';
+        }
+      });
+    }
+
+    // Initialize filters and event listeners
+    populateFilterOptions(locations, locationFilter);
+    populateFilterOptions(experiences, experienceFilter);
+    populateFilterOptions(roles, roleFilter);
+    populateFilterOptions(skills, skillFilter);
+    populateFilterOptions(modes, modeFilter);
+
+    locationFilter.addEventListener('change', filterOffers);
+    experienceFilter.addEventListener('change', filterOffers);
+    roleFilter.addEventListener('change', filterOffers);
+    skillFilter.addEventListener('change', filterOffers);
+    modeFilter.addEventListener('change', filterOffers);
+
+    // Initialize the page
+    createOffers();
+  </script>
+</body>
+</html>
